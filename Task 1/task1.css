@@ -1,0 +1,75 @@
+/* styling for the body, changing the font*/
+body{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: whitesmoke;
+}
+/* styling the main container */
+.main{
+    margin-left: 10%;
+    margin-right: 10%;
+    background: white;
+}
+/* styling the logo image */
+header img{
+    width: 60px;
+    padding: 10px;
+}
+/* displaying the images as a grid in a column direction */
+.images{
+    margin: 0;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 3fr);
+    grid-gap: 20px;
+}
+/* adjusting the size of the image */
+.img img{
+    width: 100%;
+}
+/* adding margin to the information section */
+.info{
+    margin: 7px;
+}
+/* styling the footer */
+footer{
+    background-color: rgb(51, 51, 66);
+    text-align: center;
+    padding: 10px;
+    color: white;
+}
+/* displays images one by one when the viewport 480 pixels */
+@media  screen and (max-width: 480px) {
+    .img img{
+        width: 100%;
+    }
+    .images{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
+/* displays two images side by side when the viewport is 481 to 800 pixels */
+@media  screen and (min-width: 481px) and (max-width: 800px) {
+    .img img{
+        width: 100%;   
+    }
+    .images{
+        grid-template-columns: repeat(2,2fr);
+    }
+}
+/* changes the bg color when the view port is 801 to 900 pixels */
+@media  screen and (min-width: 801px) and (max-width: 900px) {
+    .img img{
+        width: 100%;
+    }
+    body{
+        background-color: white;
+    }
+}
+/* displays the images in a grid when the viewport is more than 900 pixels */
+@media  screen and (min-width: 901px) {
+    .img img{
+        width: 100%;
+    }
+}

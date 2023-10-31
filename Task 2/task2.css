@@ -1,0 +1,122 @@
+/* general styling of the site */
+*{
+    padding: 0;
+    margin: 0;
+}
+
+/* styling the navigation bar */
+nav{
+    background-color: #1E90FF;
+    overflow: hidden;
+    width: 100%;
+    
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+/* styling the logo */
+.logo{
+    color: white;
+    font-size: 20px;
+    font-family: Helvetica;
+    font-weight: 700;
+    padding-left: 20px;
+    padding-top: 10px;
+}
+/* increasing the width of the search box */
+input{
+    width: 120%;
+    padding: 10px;
+}
+/* styling the nav links so it stays on the right */
+ul{
+    float: right;
+    margin-top: 10px;
+}
+/* styling the links so that the words would start from left to right and removing the styling of links */
+li{
+    float: left;
+    list-style: none;
+    padding-right: 20px;
+    color: white;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* styling the main container as flex */
+.main{
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+
+    display: flex;
+    justify-content: center;
+}
+/* styling the first movie and adding shadows */
+.one{
+    flex: 0 0 40%;
+
+    height: 125vh;
+    box-shadow: 1px 1px 5px 3px rgb(163, 163, 163);
+    padding: 1px;
+    border-radius: 2px;
+}
+/* styling the pargraph and heading of the first movie */
+.one p, .one h2{
+    padding-left: 16px;
+}
+/* styling the button */
+.one button{
+    margin-right: 16px;
+}
+/* styling the movie containers with 0 shrink/grow and 18% flex basis */
+.sec1, .sec2{
+    flex: 0 0 18%;
+}
+/* styling the movie containers, adding border radius and shaddow */
+.movie2, .movie3, .movie4, .movie5 {
+    border-radius: 2px;
+    height: 55%;
+    box-shadow: 1px 1px 5px 3px rgb(163, 163, 163);
+    margin-left: 5%;
+    padding: 16px;
+}
+/* adding margin to the movies at the bottom */
+.movie4, .movie5{
+    margin-top: 5%;
+}
+/* setting the size of the image */
+img{
+    width: 100%;
+}
+/* styling all the headings */
+h2{
+    font-family: Helvetica;
+    font-size: 20px;
+    font-weight: bold;
+    
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+/* styling all the paragraphs */
+p{
+    font-family: Arial;
+    font-size: 15px;
+    word-spacing: 2px;
+}
+/* styling the button, adding bg color and increasing the width/height */
+button{
+    display: block;
+    float: right;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+
+    background-color: #1E90FF;
+    color: white;
+
+    padding: 10px;
+    width: 100px;
+    margin-top: 45px;
+}

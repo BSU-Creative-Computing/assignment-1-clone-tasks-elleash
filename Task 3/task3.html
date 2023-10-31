@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- links the stylesheet -->
+    <link rel="stylesheet" href="task3.css">
+    <title>Task 3</title>
+</head>
+<body>
+    <!-- created a container to store all elements -->
+    <div class="container"> 
+        <!-- created a header and stored the images inside the header -->
+        <header> 
+            <!-- used picture tag to store images with different media queries -->
+            <picture>
+                <source srcset="https://via.placeholder.com/400" media = "(min-width: 801px)">
+                <source srcset="https://via.placeholder.com/300" media = "(min-width: 481px)">
+                <source srcset="https://via.placeholder.com/200" media = "(max-width: 480px)">
+                <img src="https://via.placeholder.com/400" alt="placeholder image">
+            </picture>
+        </header>
+        <!-- created a container for the rectangles -->
+        <div class="rectangle">
+            <div class="rec1"></div>
+            <div class="rec2"></div>
+            <div class="rec3"></div>
+            <div class="rec4"></div>
+        </div>
+        <!-- created another container for the circles -->
+        <div class="circle">
+            <div class="circle1"></div>
+            <div class="circle2"></div>
+            <div class="circle3"></div>
+            <div class="circle4"></div>
+        </div>
+        <!-- created an empty footer -->
+        <footer></footer>
+    </div>
+</body>
+</html>

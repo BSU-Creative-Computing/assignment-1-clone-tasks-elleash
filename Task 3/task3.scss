@@ -1,0 +1,122 @@
+// scss variables
+$bgs: #8CCFF7 #E2EFF1;
+$colors: #4E89AE #43658B #ED6663 #ffa372 #444;
+$wh: 70px 80px 90px 100px;
+
+// mixin for media query
+@mixin breakpoint($minwidth){
+    @media (min-width: $minwidth){
+        .circle{
+            @include flexrow;
+        }
+    }
+}
+// mixin for the padding of the circle section
+@mixin padding($top, $bottom){
+    padding-top: $top;
+    padding-bottom: $bottom;
+}
+// mixin for flex items in a column direction
+@mixin flexcol{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+// mixin for flex items in a row direction
+@mixin flexrow{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+}
+// styling the body
+body{
+    margin: 0;
+    padding: 0;
+}
+// calling the mixin for media query and setting the min-width as 621 pixels
+.container{
+    @include breakpoint(621px)
+}
+// calling the mixin flex row to display the header in a row direction and changing the bg color by calling the variable
+header{
+    @include flexrow;
+    background-color: nth($bgs, 1);
+}
+// displays the image as a block element
+img{
+    display: block;
+}
+// calling the mixin flex column to display the rectangles in a column direction and changing the bg color by calling the variable
+.rectangle{
+    @include flexcol;
+    background-color: nth($bgs, 2);
+}
+// set the styling of the first rectangle
+.rec1{
+    background-color: nth($colors, 1);
+    height: 6vh;
+    width: 100%;
+    margin-top: 5vh;
+}
+// creating a hover effect
+.rec1:hover{
+    background-color: nth($colors, 5);
+}
+// extending all the styling of the first rectangle and changing only the bg color and margin
+// this also extends the hover effect so that all elements that inherit rectangle 1 will have the hover effect
+.rec2{
+    @extend .rec1;
+    background-color: nth($colors, 2);
+    margin: 0;
+}
+.rec3{
+    @extend .rec1;
+    background-color: nth($colors, 3);
+    margin: 0;
+}
+.rec4{
+    @extend .rec1;
+    background-color: nth($colors, 4);
+    margin: 0;
+}
+// stylig the circle container with flex and padding mixins
+.circle{
+    @include flexcol;
+    @include padding(7vh,7vh);
+    background-color: nth($bgs, 2);
+    gap: 10px;
+}
+// extending all the styling of the first rectangle and changing the height and width
+// adding border radius to shape the square into a circle
+.circle1{
+    @extend .rec1;
+    height: nth($wh, 1);
+    width: nth($wh,1);
+    border-radius: 50%;
+    margin: 0;
+}
+// inheritng the first circle and the second rectangle's styling
+.circle2{
+    @extend .circle1, .rec2;
+    height: nth($wh, 2);
+    width: nth($wh,2);
+}
+// inheritng the first circle and the third rectangle's styling
+.circle3{
+    @extend .circle1, .rec3;
+    height: nth($wh, 3);
+    width: nth($wh,3);
+}
+// inheritng the first circle and the fourth rectangle's styling
+.circle4{
+    @extend .circle1, .rec4;    
+    height: nth($wh, 4);
+    width: nth($wh,4);
+}
+// styling the footer
+footer{
+    background-color: nth($bgs, 1);
+    height: 50px;
+}
