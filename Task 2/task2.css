@@ -3,12 +3,14 @@
     padding: 0;
     margin: 0;
 }
-
+/* changing the background color to whitesmoke */
+body{
+    background-color: whitesmoke;
+}
 /* styling the navigation bar */
 nav{
     background-color: #1E90FF;
     overflow: hidden;
-    width: 100%;
     
     display: flex;
     justify-content: space-between;
@@ -26,17 +28,19 @@ nav{
 }
 /* increasing the width of the search box */
 input{
+    display: flex;
+    justify-content: center;
     width: 120%;
     padding: 10px;
 }
 /* styling the nav links so it stays on the right */
 ul{
-    float: right;
+    display: flex;
+    justify-content: flex-end;
     margin-top: 10px;
 }
 /* styling the links so that the words would start from left to right and removing the styling of links */
 li{
-    float: left;
     list-style: none;
     padding-right: 20px;
     color: white;
@@ -45,45 +49,55 @@ li{
 }
 /* styling the main container as flex */
 .main{
-    margin-top: 30px;
-    margin-left: 50px;
-    margin-right: 50px;
-
     display: flex;
     justify-content: center;
+    margin-top: 1%;
 }
-/* styling the first movie and adding shadows */
-.one{
-    flex: 0 0 40%;
-
-    height: 125vh;
-    box-shadow: 1px 1px 5px 3px rgb(163, 163, 163);
-    padding: 1px;
+/* styling the first section in a row direction*/
+.section-one{
+    display: flex;
+    width: 500px;
+    flex-direction: row;
+}
+/* styling the second section and having them be in a column direction */
+.section-two{
+    display: flex;
+    flex-direction: column;
+}
+/* styling the first movie, adding box shadows and border radius */
+.movie1{
+    background-color: white;
+    overflow: hidden;
     border-radius: 2px;
+    box-shadow: 1px 1px 5px 3px rgb(163, 163, 163);
+    height: 670px;
 }
 /* styling the pargraph and heading of the first movie */
-.one p, .one h2{
-    padding-left: 16px;
-}
-/* styling the button */
-.one button{
+.movie1 p, .movie1 h2{
+    margin-left: 16px;
     margin-right: 16px;
 }
-/* styling the movie containers with 0 shrink/grow and 18% flex basis */
+/* styling the button */
+.movie1 button{
+    margin-right: 16px;
+}
+/* styling the movie sections in a row direction */
 .sec1, .sec2{
-    flex: 0 0 18%;
+    display: flex;
+    flex-direction: row;
 }
 /* styling the movie containers, adding border radius and shaddow */
-.movie2, .movie3, .movie4, .movie5 {
+.movie2, .movie3, .movie4, .movie5{
+    width: 200px;
+    background-color: white;
+    overflow: hidden;
     border-radius: 2px;
-    height: 55%;
     box-shadow: 1px 1px 5px 3px rgb(163, 163, 163);
     margin-left: 5%;
     padding: 16px;
 }
-/* adding margin to the movies at the bottom */
-.movie4, .movie5{
-    margin-top: 5%;
+.movie4, .movie5 {
+    margin-top: 3%;
 }
 /* setting the size of the image */
 img{
@@ -105,8 +119,7 @@ p{
     word-spacing: 2px;
 }
 /* styling the button, adding bg color and increasing the width/height */
-button{
-    display: block;
+.button{
     float: right;
     text-align: center;
     text-decoration: none;
@@ -118,5 +131,152 @@ button{
 
     padding: 10px;
     width: 100px;
-    margin-top: 45px;
+    margin-top: 20px;
+}
+/* styling the footer */
+footer{
+    margin-top: 70px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* adding media queries */
+@media screen and (min-width: 1281px){
+    body{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 1281px) and (max-width: 1477px){
+    body{
+        width: 100%;
+    }
+}
+/* media query to change the width of the body to 90% */
+@media screen and (max-width: 1280px){
+    body{
+        margin: auto;
+        width: 90%;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 1%;
+    }
+}
+/* displays the section two movies and displays them in a column direction. the first movie will stay as is */
+@media screen and (max-width: 1024px){
+    body{
+        width: 100%;
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-top: 1%;
+    }
+    .movie1{
+        margin-top: 1%;
+    }
+    .movie2, .movie3 {
+        margin-top: 3%;
+    }
+    .sec1, .sec2{
+        display: flex;
+        flex-direction: column;
+    }
+}
+/* displays the section two movies below the first movie. */
+@media screen and (max-width: 800px){
+    body{
+        width: 100%;
+    }
+    /* removes the input box */
+    input{
+        display: none;
+    }
+    /* removes all the links that is not the first */
+    li:not(:first-child) {
+        display: none;
+    }
+    /* removes the first link */
+    .tentative span{
+        display: none;
+    }
+    /* changes the link name into Menu */
+    .tentative:after{
+        content: "Menu";
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: auto;
+        margin-top: 1%;
+    }
+    .movie1{
+        margin-top: 1%;
+    }
+    .movie2, .movie3, .movie4, .movie5{
+        margin-left: 0;
+        margin-top: 3%;
+    }
+    .sec1, .sec2{
+        display: flex;
+        width: 500px;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+/* displays the  movies in a column direction with the same width*/
+@media screen and (max-width: 480px){
+    nav{
+        width: 500px;
+    }
+    input{
+        display: none;
+    }
+    li:not(:first-child) {
+        display: none;
+    }
+    .tentative span{
+        display: none;
+    }
+    .tentative:after{
+        content: "Menu";
+    }
+    .main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 500px;
+    }
+    .movie1{
+        height: 550px;
+        width: 330px;
+        margin-top: 1%;
+    }
+    .movie2, .movie3, .movie4, .movie5{
+        width: 300px;
+        flex-basis: 600px;
+        margin-left: 0;
+        margin-top: 3%;
+    }
+    .section-one{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .sec1, .sec2{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    footer{
+        width: 500px;
+    }
 }
